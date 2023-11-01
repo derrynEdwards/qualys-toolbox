@@ -22,3 +22,6 @@ go.work
 
 # Ideas / GoLand
 .idea/
+
+# Build
+qualys-toolbox
