@@ -55,4 +55,4 @@ in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-This project is licensed under the [MIT License](https://chat.openai.com/c/LICENSE).
+This project is licensed under the [MIT License](LICENSE).
