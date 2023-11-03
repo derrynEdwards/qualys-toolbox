@@ -10,6 +10,7 @@ import (
 type Client struct {
 	cache      qualyscache.Cache
 	httpClient http.Client
+	Session    string
 }
 
 func NewClient(timeout, cacheInterval time.Duration) Client {

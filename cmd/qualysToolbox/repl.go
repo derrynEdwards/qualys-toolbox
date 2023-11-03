@@ -12,10 +12,10 @@ import (
 type cliCommand struct {
 	name        string
 	description string
-	callback    func(*config.Config, ...string) error
+	callback    func(*config.Config, *config.ApiConfig, ...string) error
 }
 
-func StartRepl(cfg *config.Config) {
+func StartRepl(cfg *config.Config, apiCfg *config.ApiConfig) {
 	reader := bufio.NewScanner(os.Stdin)
 
 	for {
@@ -38,7 +38,7 @@ func StartRepl(cfg *config.Config) {
 		command, exists := getCommands()[commandName]
 
 		if exists {
-			err := command.callback(cfg, args...)
+			err := command.callback(cfg, apiCfg, args...)
 
 			if err != nil {
 				fmt.Println(err)
@@ -69,6 +69,11 @@ func getCommands() map[string]cliCommand {
 			name:        "exit",
 			description: "Exits the toolbox",
 			callback:    commandExit,
+		},
+		"login": {
+			name:        "login",
+			description: "starts a session with Qualys API",
+			callback:    commandLogin,
 		},
 	}
 }

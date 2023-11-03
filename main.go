@@ -10,14 +10,16 @@ import (
 )
 
 func main() {
-	qualysclient := qualysapi.NewClient(5*time.Second, time.Minute*5)
+	qualysclient := qualysapi.NewClient(60*time.Second, time.Minute*5)
 
 	cfg := &config.Config{
 		QualysApiClient: qualysclient,
 	}
 
+	apiCfg := config.LoadConfigs()
+
 	fmt.Println("===================")
 	fmt.Println("  Qualys ToolBox!")
 	fmt.Println("===================")
-	qualysToolbox.StartRepl(cfg)
+	qualysToolbox.StartRepl(cfg, &apiCfg)
 }

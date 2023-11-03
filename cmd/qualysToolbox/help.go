@@ -6,7 +6,7 @@ import (
 	"github.com/derrynEdwards/qualys-toolbox/pkg/config"
 )
 
-func commandHelp(cfg *config.Config, args ...string) error {
+func commandHelp(cfg *config.Config, apiCfg *config.ApiConfig, args ...string) error {
 	fmt.Println()
 	fmt.Println("Welcome to the Qualys Toolbox!")
 	fmt.Println()
