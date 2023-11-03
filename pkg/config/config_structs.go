@@ -7,3 +7,9 @@ import (
 type Config struct {
 	QualysApiClient qualysapi.Client
 }
+
+type ApiConfig struct {
+	BaseURL  string
+	User     string
+	Password string
+}
